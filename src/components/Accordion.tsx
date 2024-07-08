@@ -11,10 +11,12 @@ const Accordion: React.FC<AccordionProps> = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <>
       <div
         className={
-          !isOpen ? "bg-white py-2 pr-2 pl-1" : "bg-baby-blue py-2 pr-2 pl-1"
+          !isOpen
+            ? "bg-white py-2 pr-2 pl-1"
+            : "bg-baby-blue py-2 pr-2 pl-1 border-white border-b-1 sm:border-b-2"
         }
       >
         <button
@@ -57,7 +59,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, description }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -114,19 +116,45 @@ const ProductList = () => {
       ))}
       {!showAll && (
         <button
-          className="bg-green-btn hover:bg-green-btn text-white font-bold py-2 px-4 border border-green-btn rounded"
+          className="bg-green-btn hover:bg-green-btn-hover text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4"
           onClick={handleLoadMore}
         >
-          {isLoading ? "Loading..." : "Load More"}
+          {isLoading ? (
+            "Loading..."
+          ) : (
+            <div className="flex gap-1 items-center">
+              Load more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M8 4l8 8-8 8"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          )}
         </button>
       )}
       {showAll && (
         <>
           <button
-            className="bg-green-btn hover:bg-green-btn text-white font-bold py-2 px-4 border border-green-btn rounded"
+            className="bg-green-btn hover:bg-green-btn-hover text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4"
             onClick={handleShowLess}
           >
-            Show Less
+            <div className="flex gap-0.5 items-center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M16 4l-8 8 8 8"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Show less
+            </div>
           </button>
           {/* <div className="absolute bottom-0">Total Products: {data.total}</div> */}
         </>

@@ -6,6 +6,7 @@ export default {
     extend: {
       colors: {
         'green-btn': '#82DB39',
+        'green-btn-hover': '#6EBD2F',
         'baby-blue': '#E5F7F9',
       }
     },
