@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import spaceInvaders from "../assets/space-invaders.svg";
 
-const URL = "https://dummyjson.com/products";
-
 interface ProductListProps {
   title: string;
   description: string;
@@ -115,10 +113,11 @@ const Accordion = () => {
   const [loadedProducts, setLoadedProducts] = useState<Product[]>([]);
   const [showAll, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const URL: string = "https://dummyjson.com/products";
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(URL); // Ensure URL is defined
+      const response = await fetch(URL);
       const jsonData = await response.json();
       setData({ products: jsonData.products, total: jsonData.total });
       setLoadedProducts(jsonData.products.slice(0, 4));
