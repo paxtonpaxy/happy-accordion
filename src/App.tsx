@@ -1,23 +1,10 @@
 import Accordion from "./components/Accordion";
-import { useEffect } from "react";
 
 function App() {
-  const URL = "https://dummyjson.com/products";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(URL);
-      const data = await response.json();
-      console.log(response.json());
-      console.log(data);
-    };
-    fetchData();
-  }, []);
-
   return (
-    <div className="grid w-full h-screen bg-gradient-to-r from-yellow-300 to-white-900">
-      <div className="p-6">
-        <Accordion></Accordion>
+    <div className="grid grid-cols-12 w-full h-screen bg-white">
+      <div className="col-start-2 col-span-10 pt-8 sm:col-start-3 sm:col-span-8 sm:pt-16">
+        <Accordion />
       </div>
     </div>
   );
