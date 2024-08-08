@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Accordion from "./components/Accordion";
+import ArrowButtons from "./components/ArrowButtons";
 
 function App() {
   const [mainTitle, setMainTitle] = useState("");
@@ -11,6 +12,7 @@ function App() {
           {mainTitle || "Accordion Title"}
         </h1>
         <Accordion setMainTitle={setMainTitle} />
+        <ArrowButtons />
       </div>
     </div>
   );
