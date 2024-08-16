@@ -7,7 +7,7 @@ function App() {
   const [position, setPosition] = useState("top");
 
   return (
-    <div className="w-full h-screen bg-white">
+    <div className="flex flex-col w-full h-screen bg-white">
       <h1 className="text-xl font-bold mb-2 sm:mb-6 mt-2 sm:mt-6 text-center">
         {mainTitle || "Accordion Title"}
       </h1>
