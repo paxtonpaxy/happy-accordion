@@ -1,3 +1,7 @@
+.main-background {
+  background: linear-gradient(135deg, rgb(10, 143, 21), rgb(9, 63, 13), rgb(5, 34, 7), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
 .arrow-button {
   width: 70px;
 }
@@ -10,25 +14,51 @@
 }
 
 .accordion {
-  position: absolute;
+  max-height: 30rem;
+  width: 30rem;
+  overflow: auto;
 }
 
-.accordion-top {
-  top: 5rem;
-  left: 40%;
+/* Scrollbar styling */
+.accordion::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
 }
 
-.accordion-left {
-  top: 10rem;
-  left: 0;
+.accordion::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: linear-gradient(to bottom, #eb1414, #3781d4); /* Gradient background of the scrollbar track */
 }
 
-.accordion-bottom {
-  bottom: 5rem;
-  left: 40%;
+.accordion::-webkit-scrollbar-thumb {
+  background: #3781d4; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
 }
 
-.accordion-right {
-  top: 10rem;
-  right: 0;
+.accordion::-webkit-scrollbar-thumb:hover {
+  background: #1c7cb4; /* Color of the scrollbar thumb on hover */
+}
+
+
+.accordion-wrapper {
+  display: flex;
+  height: 80vh;
+}
+
+.accordion-wrapper-top {
+  justify-content: center;
+}
+
+.accordion-wrapper-left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.accordion-wrapper-bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.accordion-wrapper-right {
+  justify-content: flex-end;
+  align-items: center;
 }
