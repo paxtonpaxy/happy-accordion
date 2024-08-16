@@ -1,0 +1,34 @@
+.arrow-button {
+  width: 70px;
+}
+
+.arrow-buttons {
+  width: 210px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.accordion {
+  position: absolute;
+}
+
+.accordion-top {
+  top: 5rem;
+  left: 40%;
+}
+
+.accordion-left {
+  top: 10rem;
+  left: 0;
+}
+
+.accordion-bottom {
+  bottom: 5rem;
+  left: 40%;
+}
+
+.accordion-right {
+  top: 10rem;
+  right: 0;
+}

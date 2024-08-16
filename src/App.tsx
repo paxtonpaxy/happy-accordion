@@ -4,16 +4,15 @@ import ArrowButtons from "./components/ArrowButtons";
 
 function App() {
   const [mainTitle, setMainTitle] = useState("");
+  const [position, setPosition] = useState("top");
 
   return (
-    <div className="grid grid-cols-12 w-full h-screen bg-white">
-      <div className="col-start-2 col-span-10 pt-8 pb-6 px-2 sm:col-start-3 sm:col-span-8 sm:pt-16 sm:px-0">
-        <h1 className="text-xl font-bold mb-2 sm:mb-6">
-          {mainTitle || "Accordion Title"}
-        </h1>
-        <Accordion setMainTitle={setMainTitle} />
-        <ArrowButtons />
-      </div>
+    <div className="w-full h-screen bg-white">
+      <h1 className="text-xl font-bold mb-2 sm:mb-6 mt-2 sm:mt-6 text-center">
+        {mainTitle || "Accordion Title"}
+      </h1>
+      <Accordion setMainTitle={setMainTitle} position={position} />
+      <ArrowButtons setPosition={setPosition} />
     </div>
   );
 }

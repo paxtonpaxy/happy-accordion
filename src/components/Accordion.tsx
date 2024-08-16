@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useFetchData from "../helpers/useFetchData";
 import Product from "./Product";
 
 interface AccordionProps {
   setMainTitle: (title: string) => void;
+  position: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ setMainTitle }) => {
+const Accordion: React.FC<AccordionProps> = ({ setMainTitle, position }) => {
   const [showAll, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [openItemIndex, setOpenItemIndex] = useState<number | null>(null);
 
   const data = useFetchData();
   const finalData = showAll ? data : data.slice(0, 4);
-  // Testing with title to pass the value to the parent component
   const mainTitle = "Veelgestelde vragen";
 
   const handleLoadMore = () => {
@@ -21,10 +21,10 @@ const Accordion: React.FC<AccordionProps> = ({ setMainTitle }) => {
     setTimeout(() => {
       setShowAll(true);
       setIsLoading(false);
-    }, 1000); // To display some dialay for loading
+    }, 1000); // To display some delay for loading
   };
 
-  const handleOpenAndclose = (index: number) => {
+  const handleOpenAndClose = (index: number) => {
     openItemIndex === index ? setOpenItemIndex(null) : setOpenItemIndex(index);
   };
 
@@ -32,24 +32,24 @@ const Accordion: React.FC<AccordionProps> = ({ setMainTitle }) => {
     setShowAll(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMainTitle(mainTitle);
   }, [mainTitle, setMainTitle]);
 
   return (
-    <>
+    <div className={`accordion accordion-${position} p-4`}>
       {finalData.map((product, index) => (
         <Product
           key={index}
           title={product.title}
           description={product.description}
           isOpen={openItemIndex === index}
-          onClick={() => handleOpenAndclose(index)}
+          onClick={() => handleOpenAndClose(index)}
         />
       ))}
       {!showAll && (
         <button
-          className="bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px]"
+          className="bg-green-500 hover:bg-green-600 duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px]"
           onClick={handleLoadMore}
         >
           {isLoading ? (
@@ -72,7 +72,7 @@ const Accordion: React.FC<AccordionProps> = ({ setMainTitle }) => {
       )}
       {showAll && (
         <button
-          className="bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px]"
+          className="bg-green-500 hover:bg-green-600 duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px]"
           onClick={handleShowLess}
         >
           <div className="flex gap-0.5 items-center">
@@ -89,7 +89,7 @@ const Accordion: React.FC<AccordionProps> = ({ setMainTitle }) => {
           </div>
         </button>
       )}
-    </>
+    </div>
   );
 };
 

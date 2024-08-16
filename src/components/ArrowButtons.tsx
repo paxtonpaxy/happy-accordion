@@ -1,18 +1,36 @@
-const ArrowButtons = () => {
+import React from "react";
+
+type ArrowButtonsProps = {
+  setPosition: (position: string) => void;
+};
+
+const ArrowButtons: React.FC<ArrowButtonsProps> = ({ setPosition }) => {
   return (
-    <div className="flex flex-wrap max-w-md">
+    <div className="flex flex-wrap arrow-buttons">
       <div className="basis-full flex justify-center">
-        <button className="bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px]">
+        <button
+          className="arrow-button bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold rounded mt-2 sm:mt-4"
+          onClick={() => setPosition("top")}
+        >
           Top
         </button>
       </div>
-      <button className="bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px] basis-2/6">
+      <button
+        className="arrow-button bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold rounded mt-2 sm:mt-4 basis-2/6"
+        onClick={() => setPosition("left")}
+      >
         Left
       </button>
-      <button className="bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px] basis-2/6">
+      <button
+        className="arrow-button bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold rounded mt-2 sm:mt-4 basis-2/6"
+        onClick={() => setPosition("bottom")}
+      >
         Bottom
       </button>
-      <button className="bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold py-2 px-4 rounded mt-2 sm:mt-4 min-w-[130px] basis-2/6">
+      <button
+        className="arrow-button bg-green-btn hover:bg-green-btn-hover duration-300 text-white font-bold rounded mt-2 sm:mt-4 basis-2/6"
+        onClick={() => setPosition("right")}
+      >
         Right
       </button>
     </div>
