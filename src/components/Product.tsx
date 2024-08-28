@@ -41,8 +41,8 @@ const Product: React.FC<ProductProps> = ({
       <div
         className={
           !isOpen
-            ? "bg-white py-2 pr-2 pl-1 sm:hover:translate-x-1 transition-all"
-            : "bg-baby-blue py-2 pr-2 pl-1"
+            ? "bg-white py-2 pr-2 pl-1 sm:hover:translate-x-1 transition-all mb-0.5 rounded-sm"
+            : "bg-baby-blue py-2 pr-2 pl-1 mb-1 rounded-sm"
         }
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

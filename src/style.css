@@ -1,5 +1,5 @@
 .main-background {
-  background: linear-gradient(135deg, rgb(10, 143, 21), rgb(9, 63, 13), rgb(5, 34, 7), rgb(0, 0, 0), rgb(0, 0, 0));
+  background: linear-gradient(135deg, rgb(80, 80, 80), rgb(94, 94, 94), rgb(113, 101, 133));
 }
 
 .arrow-button {
@@ -19,23 +19,22 @@
   overflow: auto;
 }
 
-/* Scrollbar styling */
 .accordion::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 12px;
 }
 
 .accordion::-webkit-scrollbar-track {
   border-radius: 6px;
-  background: linear-gradient(to bottom, #eb1414, #3781d4); /* Gradient background of the scrollbar track */
+  background: linear-gradient(to bottom, #ffffff, #8d8d8d, #ffffff); 
 }
 
 .accordion::-webkit-scrollbar-thumb {
-  background: #3781d4; /* Color of the scrollbar thumb */
-  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+  background: #E5F7F9; 
+  border-radius: 6px; 
 }
 
 .accordion::-webkit-scrollbar-thumb:hover {
-  background: #1c7cb4; /* Color of the scrollbar thumb on hover */
+  background: #d8fbff; 
 }
 
 
