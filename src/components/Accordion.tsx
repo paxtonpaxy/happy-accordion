@@ -14,7 +14,8 @@ const Accordion: React.FC<AccordionProps> = ({ setMainTitle, position }) => {
 
   const data = useFetchData();
   const finalData = showAll ? data : data.slice(0, 4);
-  const mainTitle = "Use the button to move the Accordion";
+  const mainTitle =
+    "Use the arrows on your keyboard, or click on the bottome right buttons to move the Accordion";
 
   const handleLoadMore = () => {
     setIsLoading(true);
@@ -38,7 +39,7 @@ const Accordion: React.FC<AccordionProps> = ({ setMainTitle, position }) => {
 
   return (
     <div className={`accordion-wrapper accordion-wrapper-${position}`}>
-      <div className={`p-4 accordion`}>
+      <div className={`px-4 accordion`}>
         {finalData.map((product, index) => (
           <Product
             key={index}
