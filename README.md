@@ -1,5 +1,9 @@
 # Happy Accordion
 
+## Hosted on Netlify
+
+https://happy-accordion.netlify.app/
+
 ## Description
 
 This was a simple test for a job application. Afterwards, I wanted to add some stuff as I hadn't worked with Next.js previously.
